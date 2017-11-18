@@ -1,0 +1,113 @@
+#include <stdio.h>
+#include <conio.h>
+int mobile();
+int electricity();
+int water();
+main() {
+    int choice;
+    char option;
+    printf(“Which service do you want to calculate?\n”);
+    printf(“1. Mobile\n2. Electricity\n3. Water\n”);
+    scanf(“%d”,&choice);
+    switch (choice) {
+        case 1 : mobile();
+        break;
+        case 2 : electricity();
+        break;
+        case 3 : water();
+        break;
+        default : printf(“Incorrect number”);
+    }
+}
+
+int mobile() {
+    int call, internet, sms, call_price, internet_price, sms_price, sum;
+    printf(“\t **Mobile**\n”);
+    printf(“\tEnter usage’s value\n”);
+    printf(“Call time (min): “);
+    scanf(“%d”,&call);
+    printf(“Internet (MB): “);
+    scanf(“%d”,&internet);
+    printf(“SMS: “);
+    scanf(“%d”,&sms);
+    call_price = 800 * call;
+    internet_price = 1000 * internet;
+    sms_price = 100 * sms;
+    sum = call_price + internet_price + sms_price;
+    printf(“Call %d min\nInternet %d MBs\nSMS %d Messages\n”,call,internet,sms);
+    printf(“sum = %d KIP\n”,sum);
+}
+int electricity() {
+    int electric, electric_0_9, electric_10_49, electric_50_up, electric_price;
+    printf(“\t **Electricity**\n”);
+    printf(“\tEnter usage’s value (KW): “);
+    scanf(“%d”,&electric);
+    if (electric == 0 || electric < 10) {
+        electric_0_9 = 5000 * electric;
+        electric_price = electric_0_9;
+        printf(“\t 0-9 = %d\n”,electric_0_9);
+        printf(“\tsum = %d KIP”,electric_price);
+    } else if (electric >= 10 && electric < 50) {
+        electric_0_9 = 5000 * 9;
+        electric_10_49 = 10000 * (electric-9);
+        electric_price = electric_0_9 + electric_10_49;
+        printf(“\t 0-9 = %d\n”,electric_0_9);
+        printf(“\t 10-49 = %d\n”,electric_10_49);
+        printf(“\tsum = %d KIP”,electric_price);
+    } else if (electric >=50) {
+        electric_0_9 = 5000 * 9;
+        electric_10_49 = 10000 * 40;
+        electric_50_up = 20000 * (electric-49);
+        electric_price = electric_0_9 + electric_10_49 + electric_50_up;
+        printf(“\t 0- = %d\n”,electric_0_9);
+        printf(“\t 10-49 = %d\n”,electric_10_49);
+        printf(“\t >=50 = %d\n”,electric_50_up);
+        printf(“\t sum = %d KIP”,electric_price);
+    } else {
+        printf(“Your given number is not correct”);
+    }
+}
+int water() {
+    int water, water_0_9, water_10_49, water_50_99, water_100_up, water_price;
+    printf(“\t Water\n”);
+    printf(“\tEnter usage’s value (M square): “);
+    scanf(“%d”,&water);
+    if (water == 0 || water < 10) {
+        water_0_9 = 500 * water;
+        water_price = water_0_9;
+        printf(“\t 0-9 = %d\n”,water_0_9);
+        printf(“\t sum = %d KIP\n”,water_price);
+    }
+    else if (water >= 10 && water < 50) {
+        water_0_9 = 500 * 9;
+        water_10_49 = 1000 * (water-9);
+        water_price = water_0_9 + water_10_49;
+        printf(“\t 0-9 = %d\n”,water_0_9);
+        printf(“\t 10-49 = %d\n”,water_10_49);
+        printf(“\t sum = %d KIP\n”,water_price);
+    }
+    else if (water >= 50 && water < 100) {
+        water_0_9 = 500 * 9;
+        water_10_49 = 1000 * 40;
+        water_50_99 = 1500 * (water-49);
+        water_price = water_0_9 + water_10_49 + water_50_99;
+        printf(“\t 0-9 = %d\n”,water_0_9);
+        printf(“\t 10-49 = %d\n”,water_10_49);
+        printf(“\t 50-99 = %d\n”,water_50_99);
+        printf(“\t sum = %d KIP\n”,water_price);
+    }
+    else if (water >= 100) {
+        water_0_9 = 500 * 9;
+        water_10_49 = 1000 * 40;
+        water_50_99 = 1500 * 50;
+        water_100_up = 2500 * (water-99);
+        water_price = water_0_9 + water_10_49 + water_50_99 + water_100_up;
+        printf(“\t 0-9 = %d\n”,water_0_9);
+        printf(“\t 10-49 = %d\n”,water_10_49);
+        printf(“\t 50-99 = %d\n”,water_50_99);
+        printf(“\t >=100 = %d\n”,water_100_up);
+        printf(“\t sum = %d KIP\n”,water_price);
+    } else {
+        printf(“Your given number is not correct”);
+    }
+}
