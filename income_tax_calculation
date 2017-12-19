@@ -1,0 +1,77 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    double income, i1, i2, i3, i4, i5, l1, l2, l3, l4, l5, MaxTaxIncome1, MaxTaxIncome2, MaxTaxIncome3, MaxTaxIncome4, incomeTax;
+    
+    /* i = income level
+    l = level */
+    
+    cout << "What is your income?\n";
+    cin >> income;
+    MaxTaxIncome1 = 100000 * 0.05;
+    MaxTaxIncome2 = 400000 * 0.1;
+    MaxTaxIncome3 = 500000 * 0.2;
+    MaxTaxIncome4 = 3000000 * 0.3;
+    if (income > 4000000) {
+        i5 = income - 4000000;
+        l5 = i5 * 0.37;
+        incomeTax = MaxTaxIncome1 + MaxTaxIncome2 + MaxTaxIncome3 + MaxTaxIncome4 + l5;
+        cout << "Your income before paying tax is " << setprecision(2) << income << "\n";
+        cout << setw(1) << "Income Tax level" << setw(30) << "percentage of paying tax" << setw(40) << "Tax amount to be paid" << endl << endl;
+        cout << setw(1) << "1" << setw(20) << "5%" << setw(40) << "5,000" << endl;
+        cout << setw(1) << "2" << setw(20) << "10%" << setw(40) << "40,000" << endl;
+        cout << setw(1) << "3" << setw(20) << "20%" << setw(40) << "100,000" << endl;
+        cout << setw(1) << "4" << setw(20) << "30%" << setw(40) << "900,000" << endl;
+        cout << setw(1) << "5" << setw(20) << "37%" << setw(40) << setprecision(2) << l5 << endl;
+        cout << "You would pay " << setprecision(2) << incomeTax << "\n";
+        cout << "Your actual income is " << setprecision(2) << income - incomeTax;
+    } else if ((income > 1000000) && (income <= 4000000)) {
+        i4 = income - 1000000;
+        l4 = i4 * 0.3;
+        incomeTax = MaxTaxIncome1 + MaxTaxIncome2 + MaxTaxIncome3 + l4;
+        cout << "Your income before paying tax is " << income << "\n";
+        cout << setw(1) << "Income Tax level" << setw(30) << "percentage of paying tax" << setw(40) << "Tax amount to be paid" << endl << endl;
+        cout << setw(1) << "1" << setw(20) << "5%" << setw(40) << "5,000" << endl;
+        cout << setw(1) << "2" << setw(20) << "10%" << setw(40) << "40,000" << endl;
+        cout << setw(1) << "3" << setw(20) << "20%" << setw(40) << "100,000" << endl;
+        cout << setw(1) << "4" << setw(20) << "30%" << setw(40) << l4 << endl;
+        cout << "You would pay " << incomeTax << "\n";
+        cout << "Your actual income is " << income - incomeTax;
+    } else if ((income > 500000) && (income <= 1000000)) {
+        i3 = income - 500000;
+        l3 = i3 * 0.2;
+        incomeTax = MaxTaxIncome1 + MaxTaxIncome2 + l3;
+        cout << "Your income before paying tax is " << income << "\n";
+        cout << setw(1) << "Income Tax level" << setw(30) << "percentage of paying tax" << setw(40) << "Tax amount to be paid" << endl << endl;
+        cout << setw(1) << "1" << setw(20) << "5%" << setw(40) << "5,000" << endl;
+        cout << setw(1) << "2" << setw(20) << "10%" << setw(40) << "40,000" << endl;
+        cout << setw(1) << "3" << setw(20) << "20%" << setw(40) << l3 << endl;
+        cout << "You would pay " << incomeTax << "\n";
+        cout << "Your actual income is " << income - incomeTax;
+    } else if ((income > 100000) && (income <= 500000)) {
+        i2 = income - 100000;
+        l2 = i2 * 0.1;
+        incomeTax = MaxTaxIncome1 + l2;
+        cout << "Your income before paying tax is " << income << "\n";
+        cout << setw(1) << "Income Tax level" << setw(30) << "percentage of paying tax" << setw(40) << "Tax amount to be paid" << endl << endl;
+        cout << setw(1) << "1" << setw(20) << "5%" << setw(40) << "5,000" << endl;
+        cout << setw(1) << "2" << setw(20) << "10%" << setw(40) << l2 << endl;
+        cout << "You would pay " << incomeTax << "\n";
+        cout << "Your actual income is " << income - incomeTax;
+    } else if ((income > 0) && (income <= 100000)) {
+        l1 = income * 0.05;
+        incomeTax = l1;
+        cout << "Your income before paying tax is " << income << "\n";
+        cout << setw(1) << "Income Tax level" << setw(30) << "percentage of paying tax" << setw(40) << "Tax amount to be paid" << endl << endl;
+        cout << setw(1) << "1" << setw(20) << "5%" << setw(40) << incomeTax << endl;
+        cout << "You would pay " << incomeTax << "\n";
+        cout << "Your actual income is " << income - incomeTax;
+    } else {
+        cout << "Income must be positive number";
+    }
+}
