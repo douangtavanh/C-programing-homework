@@ -1,0 +1,51 @@
+#include <iostream>
+
+using namespace std;
+
+int number = 0;
+int sumodd = 0;
+int quantityodd = 0;
+int quantityodd3 = 0;
+int quantityodd4 = 0;
+
+int main()
+{
+    cout << "The odd number from 1 - 1000: \n";
+    while (number < 1000) {
+        number++;
+        if (number%2 != 0) {
+            sumodd = sumodd + number;
+            quantityodd++;
+            cout << number << "\n";
+            
+        }
+    }
+    number = 0;
+    cout << "The odd number which devided by 3: \n";
+    while (number < 1000) {
+        number++;
+        if (number%2 != 0) {
+            if (number%3 == 0) {
+                quantityodd3++;
+                cout << number << "\n";
+            }
+        }
+    }
+    number = 0;
+    cout << "The odd number which devided by 4: \n";
+    while (number < 1000) {
+        number++;
+        if (number%2 != 0) {
+            if (number%4 == 0) {
+                quantityodd4++;
+                cout << number << "\n";
+            }
+        }
+    }
+    cout << "Sum all odd number = " << sumodd << "\n";
+    cout << "All odd's quantity = " << quantityodd << "\n";
+    cout << "Average of all odd number = " << sumodd/quantityodd << "\n";
+    cout << "Quantity of odd number which devided by 3 = " << quantityodd3 << "\n";
+    cout << "Quantity of odd number which devided by 4 = " << quantityodd4 << "\n";
+    
+}
