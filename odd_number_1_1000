@@ -21,7 +21,7 @@ int main()
         }
     }
     number = 0;
-    cout << "The odd number which devided by 3: \n";
+    cout << "The odd number which divided by 3: \n";
     while (number < 1000) {
         number++;
         if (number%2 != 0) {
@@ -32,7 +32,7 @@ int main()
         }
     }
     number = 0;
-    cout << "The odd number which devided by 4: \n";
+    cout << "The odd number which divided by 4: \n";
     while (number < 1000) {
         number++;
         if (number%2 != 0) {
@@ -45,7 +45,7 @@ int main()
     cout << "Sum all odd number = " << sumodd << "\n";
     cout << "All odd's quantity = " << quantityodd << "\n";
     cout << "Average of all odd number = " << sumodd/quantityodd << "\n";
-    cout << "Quantity of odd number which devided by 3 = " << quantityodd3 << "\n";
-    cout << "Quantity of odd number which devided by 4 = " << quantityodd4 << "\n";
+    cout << "Quantity of odd number which divided by 3 = " << quantityodd3 << "\n";
+    cout << "Quantity of odd number which divided by 4 = " << quantityodd4 << "\n";
     
 }

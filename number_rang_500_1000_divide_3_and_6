@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int number = 499;
+int numberdivided3 = 0;
+int numberdivided6 = 0;
+
+int main()
+{
+    cout << "Number divided by 3: \n";
+    while (number < 1000) {
+        number++;
+        if (number%3 == 0) {
+            numberdivided3++;
+            cout << number << "\n";
+        }
+    }
+    number = 499;
+    cout << "Number divided by 6: \n";
+    while (number < 1000) {
+        number++;
+        if (number%6 == 0) {
+            numberdivided6++;
+            cout << number << "\n";
+        }
+    }
+    cout << "Quantity of number divided by 3 = " << numberdivided3 << "\n";
+    cout << "Quantity of number divided by 6 = " << numberdivided6 << "\n";
+}
